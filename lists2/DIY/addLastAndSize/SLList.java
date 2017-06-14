@@ -8,15 +8,18 @@ public class SLList {
         }
     }
 
-    private IntNode first; 
+    private IntNode first;
+    private int size;
 
     public SLList(int x) {
         first = new IntNode(x, null);
+        size = 1;
     }
 
     /** Adds an item to the front of the list. */
     public void addFirst(int x) {
         first = new IntNode(x, first);
+        size += 1;
     }    
 
     /** Retrieves the front item from the list. */
@@ -43,6 +46,7 @@ public class SLList {
     public void addLast(int x) {
         /* Your Code Here! */
         addLastHelper(first, x);
+        size += 1;
     }
 
     /** Returns the number of items in the list using recursion. */
@@ -62,6 +66,7 @@ public class SLList {
         L.addFirst(5);
         L.addLast(20);
         System.out.println(L.size());
+        System.out.println(L.size);
         System.out.println(L.getFirst());
         System.out.println(L.getLast());
     }
