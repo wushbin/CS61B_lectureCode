@@ -34,12 +34,18 @@ public class IntList {
 			return this.rest.get(i - 1);
 		}
 	}
-
+	/** add first method*/
+	public void addFirst(int x) {
+		IntList L = new IntList(this.first, this.rest);
+		this.first = x;
+		this.rest = L;
+	}
 	public static void main(String[] args) {
 		IntList L = new IntList(15, null);
-		L = new IntList(10, L);
-		L = new IntList(5, L);
+		L.addFirst(10);
+		L.addFirst(5);
 
 		System.out.println(L.iterativeSize());
+		System.out.println(L.first);
 	}
 } 
